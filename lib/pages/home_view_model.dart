@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:islands_counter/pages/home_status.dart';
 import 'package:islands_counter/utils/island_counter_algoritm.dart';
@@ -33,7 +34,7 @@ class HomeViewModel extends ViewModel<HomeStatus> {
       status.matrixSize,
       (int i) => List.generate(
         status.matrixSize,
-        (int j) => 0,
+        (int j) => Random().nextInt(2),
       ),
     );
 

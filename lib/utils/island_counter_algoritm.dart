@@ -45,8 +45,6 @@ class IslandCounterAlgorithm {
   /// Returns:
   ///   The number of islands in the matrix.
   static void _dfs(List<List<int>> matrix, int i, int j, int row, int col) {
-    /// Checking if the current cell is out of bounds or if it is not a 1. If it is, we
-    /// return.
     if (((((i < 0) || (j < 0)) || (i > (row - 1))) || (j > (col - 1))) ||
         (matrix[i][j] != 1)) {
       return;
