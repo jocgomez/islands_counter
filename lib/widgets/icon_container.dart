@@ -3,7 +3,12 @@ import 'package:islands_counter/resources/color_manager.dart';
 
 class IconContainer extends StatelessWidget {
   final IconData icon;
-  const IconContainer({Key? key, required this.icon}) : super(key: key);
+  final Color? iconColor;
+  const IconContainer({
+    Key? key,
+    required this.icon,
+    this.iconColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,7 @@ class IconContainer extends StatelessWidget {
       ),
       child: Icon(
         icon,
-        color: ColorManager.blackText,
+        color: iconColor ?? ColorManager.blackText,
       ),
     );
   }

@@ -30,9 +30,9 @@ class CategoryContainer extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey[300]!,
-              offset: const Offset(0, 2),
-              spreadRadius: 2,
-              blurRadius: 5,
+              offset: const Offset(0, 3),
+              spreadRadius: 1,
+              blurRadius: 2,
             )
           ],
         ),

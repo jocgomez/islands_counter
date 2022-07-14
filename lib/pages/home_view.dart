@@ -4,8 +4,11 @@ import 'package:islands_counter/pages/home_view_model.dart';
 import 'package:islands_counter/resources/asset_manager.dart';
 import 'package:islands_counter/resources/color_manager.dart';
 import 'package:islands_counter/resources/constant_manager.dart';
+import 'package:islands_counter/resources/font_manager.dart';
+import 'package:islands_counter/resources/values_manager.dart';
 import 'package:islands_counter/widgets/category_container.dart';
 import 'package:islands_counter/widgets/icon_container.dart';
+import 'package:islands_counter/widgets/restaurant_container.dart';
 import 'package:provider/provider.dart';
 
 part './section/island_generate.dart';

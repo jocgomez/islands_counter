@@ -4,5 +4,5 @@ class AssetManager {
   static const String water = 'lib/assets/gifs/water.gif';
 
   static const String nasaLogo = 'lib/assets/images/nasa.png';
-  static const String loading = 'lib/assets/images/loading.gif';
+  static const String loading = 'lib/assets/gifs/loading.gif';
 }
