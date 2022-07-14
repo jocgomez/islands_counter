@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:islands_counter/resources/color_manager.dart';
 
 class CategoryContainer extends StatelessWidget {
   final String category;
-  const CategoryContainer({Key? key, required this.category}) : super(key: key);
+  final bool isSelected;
+  final Function()? onTap;
+
+  const CategoryContainer({
+    Key? key,
+    required this.category,
+    required this.isSelected,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
     return InkWell(
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.symmetric(
           vertical: 10,
@@ -16,7 +26,7 @@ class CategoryContainer extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Colors.white,
+          color: isSelected ? Colors.orange[700] : Colors.white,
           boxShadow: [
             BoxShadow(
               color: Colors.grey[300]!,
@@ -28,10 +38,12 @@ class CategoryContainer extends StatelessWidget {
         ),
         child: Text(
           category,
-          style: textTheme.bodyText2!.copyWith(fontWeight: FontWeight.w500),
+          style: textTheme.bodyText2!.copyWith(
+            fontWeight: FontWeight.w500,
+            color: isSelected ? Colors.white : ColorManager.blackText,
+          ),
         ),
       ),
-      onTap: () {},
     );
   }
 }

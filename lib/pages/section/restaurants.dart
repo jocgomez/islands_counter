@@ -6,6 +6,7 @@ class Restaurants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
+    final HomeViewModel viewModel = context.watch<HomeViewModel>();
 
     return Container(
       color: Colors.grey[100],
@@ -37,6 +38,7 @@ class Restaurants extends StatelessWidget {
                   'Favorites',
                   style: textTheme.headline2!.copyWith(
                     fontSize: 30,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
                 const IconContainer(icon: Icons.add),
@@ -57,6 +59,10 @@ class Restaurants extends StatelessWidget {
               itemBuilder: (context, index) {
                 return CategoryContainer(
                   category: ConstantManager.categories.elementAt(index),
+                  isSelected: index == viewModel.status.currentCategory,
+                  onTap: () {
+                    viewModel.changeCurrentCategory(index);
+                  },
                 );
               },
             ),

@@ -10,6 +10,7 @@ class HomeStatus extends ViewStatus {
     required this.currentNavTab,
     required this.matrixSize,
     required this.islandsCount,
+    required this.currentCategory,
     required this.matrix,
   });
 
@@ -17,6 +18,7 @@ class HomeStatus extends ViewStatus {
   final int currentNavTab;
   final int matrixSize;
   final int islandsCount;
+  final int currentCategory;
   final List<List<int>> matrix;
 
   /// Creates a copy of the current SignUpStatus with property changes
@@ -25,6 +27,7 @@ class HomeStatus extends ViewStatus {
     int? currentNavTab,
     int? matrixSize,
     int? islandsCount,
+    int? currentCategory,
     List<List<int>>? matrix,
   }) {
     return HomeStatus(
@@ -32,6 +35,7 @@ class HomeStatus extends ViewStatus {
       currentNavTab: currentNavTab ?? this.currentNavTab,
       matrixSize: matrixSize ?? this.matrixSize,
       islandsCount: islandsCount ?? this.islandsCount,
+      currentCategory: currentCategory ?? this.currentCategory,
       matrix: matrix ?? this.matrix,
     );
   }

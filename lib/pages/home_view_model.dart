@@ -12,6 +12,7 @@ class HomeViewModel extends ViewModel<HomeStatus> {
       currentNavTab: 3,
       matrixSize: 0,
       islandsCount: 0,
+      currentCategory: 0,
       matrix: [],
     );
   }
@@ -82,5 +83,11 @@ class HomeViewModel extends ViewModel<HomeStatus> {
         currentTab: index,
       );
     }
+  }
+
+  void changeCurrentCategory(int index) {
+    status = status.copyWith(
+      currentCategory: index,
+    );
   }
 }
