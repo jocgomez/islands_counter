@@ -8,6 +8,8 @@ import 'package:islands_counter/view_model.dart';
 class HomeViewModel extends ViewModel<HomeStatus> {
   HomeViewModel() {
     status = HomeStatus(
+      currentTab: 0,
+      currentNavTab: 3,
       matrixSize: 0,
       islandsCount: 0,
       matrix: [],
@@ -68,5 +70,17 @@ class HomeViewModel extends ViewModel<HomeStatus> {
     status = status.copyWith(
       islandsCount: islandsCount,
     );
+  }
+
+  void changeTab(int index, {bool isNavTab = false}) {
+    if (isNavTab) {
+      status = status.copyWith(
+        currentNavTab: index,
+      );
+    } else {
+      status = status.copyWith(
+        currentTab: index,
+      );
+    }
   }
 }

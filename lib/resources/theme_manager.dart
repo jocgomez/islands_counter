@@ -15,6 +15,15 @@ ThemeData getApplicationTheme() {
         fontSize: 16,
         color: ColorManager.blackText,
       ),
+      headline2: GoogleFonts.poppins(
+        fontWeight: FontWeight.w600,
+        fontSize: 18,
+        color: Colors.black,
+      ),
+      bodyText2: GoogleFonts.poppins(
+        fontSize: 16,
+        color: Colors.black,
+      ),
     ),
   );
 }
