@@ -1,3 +1,4 @@
+import 'package:islands_counter/domain/model/restaurant_model.dart';
 import 'package:islands_counter/view_model.dart';
 
 /// {@template sign_up_status}
@@ -11,7 +12,9 @@ class HomeStatus extends ViewStatus {
     required this.matrixSize,
     required this.islandsCount,
     required this.currentCategory,
+    required this.isLoading,
     required this.matrix,
+    required this.restaurants,
   });
 
   final int currentTab;
@@ -19,7 +22,9 @@ class HomeStatus extends ViewStatus {
   final int matrixSize;
   final int islandsCount;
   final int currentCategory;
+  final bool isLoading;
   final List<List<int>> matrix;
+  final List<RestaurantModel> restaurants;
 
   /// Creates a copy of the current SignUpStatus with property changes
   HomeStatus copyWith({
@@ -28,7 +33,9 @@ class HomeStatus extends ViewStatus {
     int? matrixSize,
     int? islandsCount,
     int? currentCategory,
+    bool? isLoading,
     List<List<int>>? matrix,
+    List<RestaurantModel>? restaurants,
   }) {
     return HomeStatus(
       currentTab: currentTab ?? this.currentTab,
@@ -36,7 +43,9 @@ class HomeStatus extends ViewStatus {
       matrixSize: matrixSize ?? this.matrixSize,
       islandsCount: islandsCount ?? this.islandsCount,
       currentCategory: currentCategory ?? this.currentCategory,
+      isLoading: isLoading ?? this.isLoading,
       matrix: matrix ?? this.matrix,
+      restaurants: restaurants ?? this.restaurants,
     );
   }
 }

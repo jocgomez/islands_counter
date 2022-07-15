@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:islands_counter/data/get_it_locator.dart';
+import 'package:islands_counter/data/services/service_iteractor.dart';
 import 'package:islands_counter/pages/home_view_model.dart';
 import 'package:islands_counter/resources/asset_manager.dart';
 import 'package:islands_counter/resources/color_manager.dart';
@@ -8,8 +10,10 @@ import 'package:islands_counter/resources/font_manager.dart';
 import 'package:islands_counter/resources/values_manager.dart';
 import 'package:islands_counter/widgets/category_container.dart';
 import 'package:islands_counter/widgets/icon_container.dart';
+import 'package:islands_counter/widgets/loading_restaurant_container.dart';
 import 'package:islands_counter/widgets/restaurant_container.dart';
 import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 
 part './section/island_generate.dart';
 part './section/restaurants.dart';
@@ -20,7 +24,9 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<HomeViewModel>(
-      create: (_) => HomeViewModel(),
+      create: (_) => HomeViewModel(
+        locator<ServiceInteractor>(),
+      ),
       builder: (BuildContext context, _) {
         return const _HomeViewBody();
       },

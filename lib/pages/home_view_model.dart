@@ -1,19 +1,24 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:islands_counter/data/services/service_iteractor.dart';
 import 'package:islands_counter/pages/home_status.dart';
 import 'package:islands_counter/utils/island_counter_algoritm.dart';
 import 'package:islands_counter/view_model.dart';
 
 class HomeViewModel extends ViewModel<HomeStatus> {
-  HomeViewModel() {
+  final ServiceInteractor _interactor;
+
+  HomeViewModel(this._interactor) {
     status = HomeStatus(
       currentTab: 0,
       currentNavTab: 3,
       matrixSize: 0,
       islandsCount: 0,
       currentCategory: 0,
+      isLoading: false,
       matrix: [],
+      restaurants: [],
     );
   }
 
@@ -79,6 +84,9 @@ class HomeViewModel extends ViewModel<HomeStatus> {
         currentNavTab: index,
       );
     } else {
+      if (index == 1) {
+        getRestaurants();
+      }
       status = status.copyWith(
         currentTab: index,
       );
@@ -89,5 +97,21 @@ class HomeViewModel extends ViewModel<HomeStatus> {
     status = status.copyWith(
       currentCategory: index,
     );
+  }
+
+  Future<void> getRestaurants() async {
+    try {
+      status = status.copyWith(isLoading: true);
+      await _interactor.getRestaurantInfo().then((value) {
+        if (value.meta.status == 200) {
+          status = status.copyWith(
+            restaurants: value.data,
+          );
+        }
+      });
+      status = status.copyWith(isLoading: false);
+    } catch (e) {
+      print('Error $e');
+    }
   }
 }
