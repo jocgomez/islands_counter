@@ -1,16 +1,7 @@
 # islands_counter
+The main idea of this app was to visualize a counter algorithm. In this case with an interactive matrix where any space in the array that you choose could be island or sea and the algorith start counting the islands that are connected based on your actions.
 
-A new Flutter project.
+In the other tab we can see a completely diferente UI, and that's becouse is a 1:1 clone based on a received design.
 
-## Getting Started
+https://user-images.githubusercontent.com/37158004/199103105-b29f2fab-1d2e-4a4c-a8e2-d4a367073f20.mp4
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
